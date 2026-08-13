@@ -1,41 +1,45 @@
-# 🤖 Alexa com Deepseek API
+# Busca Profunda - Alexa Skill
 
-Bem-vindo(a) ao projeto **Alexa com Deepseek**, uma adaptação do repositório [skill-alexa-chatgpt4](https://github.com/alexandremendoncaalvaro/skill-alexa-chatgpt4), agora utilizando a **API do Deepseek** para dar voz à inteligência artificial.
+Integração Alexa + Deepseek API. Faça perguntas via voz e receba respostas com IA em português.
 
----
+## Quick Start
 
-## 📚 Sobre o Projeto
+1. Clone este repositório
+2. Configure sua API key Deepseek em `lambda/lambda_function.py` (linha 17)
+3. Deploy: `ask deploy`
 
-Este projeto tem como objetivo integrar a assistente virtual **Alexa** com a **API Deepseek**, permitindo interações mais naturais e inteligentes com o usuário. A base foi construída sobre o repositório criado por [alexandremendoncaalvaro](https://github.com/alexandremendoncaalvaro), com adaptações para utilizar o modelo `deepseek-chat`.
+## Stack
 
----
+- **Runtime**: Python 3.x (AWS Lambda)
+- **SDK**: Alexa Skills Kit (ask-sdk-core)
+- **API**: Deepseek Chat
+- **Locales**: Português (Brasil)
 
-## 🎥 Tutorial em Vídeo
+## Arquitetura
 
-Quer ver o passo a passo de como integrar o Deepseek na sua Alexa?
+```
+Alexa Device → AWS Lambda → Deepseek API → Resposta em Voz
+```
 
-📺 Confira o vídeo completo no YouTube no Canal Café com bug:  
-👉 [link do vídeo no youtube](https://youtu.be/lhqpAaIosmI)
+## Comandos
 
----
+```powershell
+# Deploy completo
+ask deploy
 
-## 🔗 Repositório Base
+# Deploy apenas Lambda
+ask deploy --target lambda
 
-Este projeto é uma adaptação direta de:
+# Testar localmente
+ask dialog --locale pt-BR
+```
 
-🔗 https://github.com/alexandremendoncaalvaro/skill-alexa-chatgpt4
+## Configuração
 
----
+- **Invocation**: "chat avançado"
+- **Intent Principal**: GptQueryIntent
+- **Limite Resposta**: 400 caracteres (configurável)
 
-## ✨ Tecnologias Utilizadas
+## Licença
 
-- **Alexa Skills Kit (ASK)**
-- **Python 3**
-- **AWS Lambda**
-- **Deepseek API**
-
----
-
-## 📄 Licença
-
-Este projeto segue os termos da MIT License
+MIT
